@@ -32,14 +32,14 @@ public class DemoUserServiceImpl implements DemoUserService {
     }
 
     @Override
-    public DemoUserDTO saveDemoUser(final DemoUserDTO demoUser) throws JsonProcessingException {
+    public DemoUserDTO saveDemoUser(final DemoUserDTO demoUser) {
         DemoUser demoUserToSave = mapperFacade.map(demoUser, DemoUser.class);
         demoUserToSave.setCreationDate(LocalDateTime.now());
         if (Objects.nonNull(demoUserRepository.findByUsername(demoUserToSave.getUsername()))) {
             throw new DemoUserDuplicateException();
         }
         DemoUserDTO returnedDemoUserDTO = mapperFacade.map(demoUserRepository.insert(demoUserToSave), DemoUserDTO.class);
-        rabbitMQService.send(jsonMapper.writeValueAsString(returnedDemoUserDTO));
+        rabbitMQService.send(returnedDemoUserDTO);
         return returnedDemoUserDTO;
     }
 

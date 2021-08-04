@@ -1,5 +1,6 @@
 package com.volkov.demoproducer.service.impl;
 
+import com.volkov.demoproducer.entity.dto.DemoUserDTO;
 import java.util.logging.Logger;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,8 +22,8 @@ public class RabbitMQService {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void send(String message) {
-        rabbitTemplate.convertAndSend(exchange, routingkey, message);
-        LOGGER.info("sent to mq, message = " + message);
+    public void send(DemoUserDTO demoUserDTO) {
+        rabbitTemplate.convertAndSend(exchange, routingkey, demoUserDTO);
+        LOGGER.info("sent to mq, message = " + demoUserDTO);
     }
 }
