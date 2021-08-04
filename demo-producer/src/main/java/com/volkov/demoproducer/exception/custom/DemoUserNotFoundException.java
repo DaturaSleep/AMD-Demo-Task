@@ -1,7 +1,7 @@
 package com.volkov.demoproducer.exception.custom;
 
-public class DemoUserNotFoundException extends RuntimeException{
-    public DemoUserNotFoundException(){
+public class DemoUserNotFoundException extends RuntimeException {
+    public DemoUserNotFoundException() {
         super("Demo User not found");
     }
 }

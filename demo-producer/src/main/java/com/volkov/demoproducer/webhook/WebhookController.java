@@ -2,7 +2,6 @@ package com.volkov.demoproducer.webhook;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-import java.util.List;
 import org.slf4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +25,7 @@ public class WebhookController {
 
     @PostMapping("post/")
     public ResponseEntity<String> postWebhook(@RequestBody String metaDataBody) {
-       LOGGER.info("Echo meta-data body back once received");
+        LOGGER.info("Echo meta-data body back once received");
         return new ResponseEntity<>(metaDataBody, HttpStatus.OK);
     }
 }

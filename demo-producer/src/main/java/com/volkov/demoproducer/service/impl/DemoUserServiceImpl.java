@@ -1,6 +1,5 @@
 package com.volkov.demoproducer.service.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.volkov.demoproducer.entity.DemoUser;
 import com.volkov.demoproducer.entity.dto.DemoUserDTO;

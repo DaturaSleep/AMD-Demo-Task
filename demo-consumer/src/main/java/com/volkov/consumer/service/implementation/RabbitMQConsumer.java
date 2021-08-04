@@ -3,7 +3,6 @@ package com.volkov.consumer.service.implementation;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.volkov.consumer.entity.dto.DemoUserDTO;
 import com.volkov.consumer.service.DemoUserService;
-import java.io.File;
 import java.io.IOException;
 import java.util.logging.Logger;
 import org.springframework.amqp.core.Message;
