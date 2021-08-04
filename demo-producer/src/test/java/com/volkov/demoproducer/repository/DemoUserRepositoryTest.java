@@ -28,7 +28,7 @@ public class DemoUserRepositoryTest {
     @ShouldMatchDataSet(location = "ExpectedDataSave.json")
     @IgnorePropertyValue(properties = {"creationDate"})
     @Test
-    public void savePlayerCompleted() {
+    public void when_saveDemoUser_then_success() {
         demoUserService.saveDemoUser(new DemoUserDTO("test", "test"));
     }
 
@@ -36,7 +36,7 @@ public class DemoUserRepositoryTest {
     @ShouldMatchDataSet(location = "InitialDataDelete.json")
     @IgnorePropertyValue(properties = {"creationDate"})
     @Test
-    public void deletePlayersCompleted() {
+    public void when_deleteDemoUser_then_success() {
         demoUserService.deleteDemoUserByUsername("test");
     }
 }
