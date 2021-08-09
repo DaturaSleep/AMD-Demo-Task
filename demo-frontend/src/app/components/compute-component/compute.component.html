@@ -1,0 +1,27 @@
+<div class="submit-form">
+  <div class="form-group">
+    <label for="firstNumber">first number</label>
+    <input
+      class="form-control"
+      id="firstNumber"
+      required
+      [(ngModel)]="firstNumber"
+      type = "number"
+      name="firstNumber"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="secondNumber">second number</label>
+    <input
+      class="form-control"
+      id="secondNumber"
+      required
+      [(ngModel)]="secondNumber"
+      type = "number"
+      name="secondNumber"
+    />
+  </div>
+  <p>{{summedNumber}}</p>
+  <button (click)="sumTwoNumbers()"> Sum two numbers</button>
+</div>

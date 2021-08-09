@@ -1,0 +1,46 @@
+<div>
+  <div *ngIf="currentUser.username" class="edit-form">
+    <h4>Tutorial</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentUser.username"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="currentUser.firstname"
+          name="description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="surname">Surname</label>
+        <input
+          type="text"
+          class="form-control"
+          id="surname"
+          [(ngModel)]="currentUser.firstname"
+          name="description"
+        />
+      </div>
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteUser()">
+      Delete
+    </button>
+  </div>
+
+  <div *ngIf="!currentUser">
+    <br/>
+    <p>Cannot access this User...</p>
+  </div>
+</div>

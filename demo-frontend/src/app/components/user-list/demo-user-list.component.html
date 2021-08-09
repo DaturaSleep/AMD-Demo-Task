@@ -1,0 +1,33 @@
+<div class="col-md-6">
+  <h4>Demo Users List</h4>
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let user of users; let i = index"
+      [class.active]="i == currentIndex"
+      (click)="setActiveUser(user, i)"
+    >
+      {{ user.username }}
+    </li>
+  </ul>
+
+</div>
+<div class="col-md-6">
+  <div *ngIf="currentUser">
+    <h4>User</h4>
+    <div>
+      <label><strong>Username:</strong></label> {{ currentUser.username }}
+    </div>
+    <div>
+      <label><strong>Firstname:</strong></label>
+      {{ currentUser.firstname }}
+    </div>
+    <div>
+      <button (click)="deleteUserByUsername()">
+        Delete this user
+      </button>
+    </div>
+  </div>
+
+</div>
+

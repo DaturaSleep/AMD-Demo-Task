@@ -9,6 +9,7 @@ import com.lordofthejars.nosqlunit.mongodb.InMemoryMongoDb;
 import com.lordofthejars.nosqlunit.mongodb.MongoFlexibleComparisonStrategy;
 import com.volkov.demoproducer.entity.dto.DemoUserDTO;
 import com.volkov.demoproducer.service.DemoUserService;
+import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class DemoUserRepositoryTest {
     @Autowired
     DemoUserService demoUserService;
 
-    @Rule
+    @ClassRule
     InMemoryMongoDb inMemoryMongoDb = InMemoryMongoDb.InMemoryMongoRuleBuilder.newInMemoryMongoDbRule().build();
 
     @UsingDataSet(locations = "InitialDataSave.json", loadStrategy = LoadStrategyEnum.CLEAN_INSERT)
